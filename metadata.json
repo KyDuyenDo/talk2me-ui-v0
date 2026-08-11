@@ -1,0 +1,6 @@
+{
+  "name": "Talk2Me LearnTube",
+  "description": "AI-powered language learning platform from YouTube videos with theory, quizzes, dictation, shadowing, writing, and speaking exercises.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  :root {
+    --brand-primary: #2e68ff;
+    --brand-primary-hover: #1e52db;
+    --brand-soft: #eaf1ff;
+    
+    --bg-base: #f7f8fb;
+    --bg-surface: #ffffff;
+    --bg-surface-2: #f1f4f9;
+    --border: #e4e8f0;
+    
+    --text-primary: #1b1f2e;
+    --text-secondary: #5a6478;
+    --text-muted: #95a0b4;
+    
+    /* Learning Mode Accent Tokens */
+    --mode-theory: #7c5cfc;
+    --mode-theory-soft: #f2eefa;
+    --mode-quiz: #2e68ff;
+    --mode-quiz-soft: #eaf1ff;
+    --mode-dictation: #0ea5c4;
+    --mode-dictation-soft: #e6f7fa;
+    --mode-shadowing: #ec4899;
+    --mode-shadowing-soft: #fde8f3;
+    --mode-writing: #f79009;
+    --mode-writing-soft: #fef3e6;
+    --mode-speaking: #12b76a;
+    --mode-speaking-soft: #e6f7ef;
+  }
+
+  .dark {
+    --brand-primary: #5b8cff;
+    --brand-primary-hover: #7ba3ff;
+    --brand-soft: #1a2540;
+    
+    --bg-base: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-surface-2: #273449;
+    --border: #334155;
+    
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #64748b;
+
+    /* Learning Mode Dark Accents */
+    --mode-theory-soft: #2a1f4a;
+    --mode-quiz-soft: #1a274c;
+    --mode-dictation-soft: #132e3a;
+    --mode-shadowing-soft: #3b182d;
+    --mode-writing-soft: #382413;
+    --mode-speaking-soft: #143324;
+  }
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Card hover animation */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+}
